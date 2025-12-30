@@ -1,69 +1,77 @@
-ChefSaku - AI Recipe Generator
+# ChefSaku – AI Recipe Generator
 
-ChefSaku adalah aplikasi mobile yang dikembangkan menggunakan framework Flutter dan terintegrasi dengan Google Gemini AI (model gemini-3-flash-prevuew). Aplikasi ini berfungsi sebagai asisten memasak sederhana yang memberikan rekomendasi resep masakan Indonesia berdasarkan bahan-bahan yang dimiliki pengguna di rumah.
+ChefSaku adalah aplikasi mobile yang dikembangkan menggunakan framework Flutter dan terintegrasi dengan Google Gemini AI. Aplikasi ini berfungsi sebagai asisten memasak sederhana yang memberikan rekomendasi resep masakan Indonesia berdasarkan bahan-bahan yang dimiliki pengguna di rumah.
 
 Project ini dibuat sebagai studi kasus implementasi Artificial Intelligence pada aplikasi mobile dengan manajemen state yang sederhana.
 
-Fitur Utama
+## Fitur Utama
 
-Input Bahan: Pengguna dapat memasukkan daftar bahan makanan yang tersedia (contoh: Telur, Tempe, Sawi).
+* Input Bahan
+  Pengguna dapat memasukkan daftar bahan makanan yang tersedia, seperti telur, tempe, atau sawi.
 
-AI Generation: Menggunakan Google Gemini untuk menghasilkan resep yang relevan, lengkap dengan bumbu tambahan dan langkah memasak.
+* AI Recipe Generation
+  Menggunakan Google Gemini untuk menghasilkan resep yang relevan, lengkap dengan bahan tambahan dan langkah memasak.
 
-Tampilan Sederhana: Antarmuka pengguna (UI) yang bersih dan mudah digunakan dengan tema warna makanan.
+* Tampilan Sederhana
+  Antarmuka pengguna yang bersih dan mudah digunakan dengan tema warna makanan.
 
-Manajemen Error: Menangani kasus ketika koneksi gagal atau API Key bermasalah.
+* Manajemen Error
+  Menangani kondisi ketika koneksi gagal atau API Key bermasalah.
 
-Teknologi yang Digunakan
+## Teknologi yang Digunakan
 
-Flutter (Dart)
+* Flutter (Dart)
+* Google Gemini API
+* HTTP REST API
+* Flutter Dotenv (flutter_dotenv)
 
-Google Generative AI SDK (google_generative_ai)
+## Cara Menjalankan Aplikasi
 
-Flutter Dotenv (flutter_dotenv) untuk manajemen environment variable
+Karena project ini menggunakan API Key yang bersifat rahasia, diperlukan konfigurasi mandiri sebelum aplikasi dapat dijalankan.
 
-Cara Menjalankan Aplikasi (Instalasi)
+### 1. Clone Repository
 
-Dikarenakan project ini menggunakan API Key yang bersifat rahasia, Anda perlu melakukan konfigurasi mandiri untuk menjalankannya. Ikuti langkah-langkah berikut:
-
-Clone Repository
-Unduh source code ke komputer Anda:
+```bash
 git clone https://github.com/SinggihHakim/tugas_pm2.git
 cd tugas_pm2
+```
 
-Install Dependencies
-Unduh semua library yang diperlukan:
+### 2. Install Dependencies
+
+```bash
 flutter pub get
+```
 
-Konfigurasi API Key (PENTING)
-Project ini tidak menyertakan file .env di dalam repository demi alasan keamanan. Anda harus membuatnya sendiri:
+### 3. Konfigurasi API Key
 
-Buat file baru bernama .env di root folder project (sejajar dengan file pubspec.yaml).
+Repository ini tidak menyertakan file .env demi alasan keamanan.
 
-Buka Google AI Studio (https://aistudio.google.com/) dan buat API Key baru.
+Langkah-langkah:
 
-Isi file .env tersebut dengan format berikut:
+1. Buat file baru bernama .env di root project (sejajar dengan pubspec.yaml).
+2. Buat API Key melalui Google AI Studio.
+3. Isi file .env dengan format berikut:
+
+```env
 GEMINI_API_KEY=MASUKKAN_API_KEY_ANDA_DISINI
+```
 
-Jalankan Aplikasi
+### 4. Jalankan Aplikasi
+
 Pastikan emulator atau device fisik sudah terhubung, lalu jalankan:
+
+```bash
 flutter run
+```
 
-Keamanan dan File .env
+## Keamanan dan File .env
 
-Anda tidak akan menemukan file .env di dalam repository ini. Hal ini disengaja dan merupakan praktik standar keamanan (Best Practice) dalam pengembangan perangkat lunak.
+File .env tidak disertakan di dalam repository sebagai bentuk penerapan praktik keamanan yang baik.
 
-Alasan mengapa file .env tidak di-push ke GitHub:
+Alasan utama:
 
-Perlindungan Data Sensitif: File .env berisi GEMINI_API_KEY. Kunci ini bersifat rahasia. Jika diunggah ke publik, siapa pun dapat mengambilnya.
+* File .env berisi API Key yang bersifat rahasia.
+* Mencegah penyalahgunaan kuota API.
+* File .env telah dimasukkan ke dalam .gitignore sehingga tidak terunggah ke GitHub.
 
-Mencegah Penyalahgunaan: Jika API Key bocor, pihak yang tidak bertanggung jawab dapat menggunakan kuota API Anda, yang dapat menyebabkan habisnya kuota gratis atau pembengkakan biaya tagihan.
-
-GitIgnore: File .env telah didaftarkan ke dalam file .gitignore, sehingga Git secara otomatis mengabaikan file tersebut saat proses upload (push) dilakukan.
-
-Oleh karena itu, setiap developer yang ingin menjalankan project ini diharapkan memiliki API Key masing-masing.
-
-Author
-
-Singgih Hakim
-Tugas Project PM2
+Setiap developer yang menjalankan project ini diwajibkan menggunakan API Key masing-masing.
